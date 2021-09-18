@@ -17,7 +17,7 @@ import os
 
 import pandas as pd
 
-def load_q1_data(raw_path: str='~/portfolio/also-sprach-zarathustra/data/raw/'):
+def load_q1_data(raw_path: str='~/portfolio/also-sprach-zarathrustra/data/raw/'):
     """Return token set and token sample from Also Sprach Zarathustra"""
     raw_path = os.path.expanduser(raw_path)
 
