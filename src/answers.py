@@ -21,6 +21,8 @@ import numpy as np
 
 def main():
     raw_path = input('Enter the path to the raw data: ')
+    if raw_path[-1] != '/':
+        raw_path += '/'
     
     tokens, sample, text = load_data(raw_path=raw_path)
 
@@ -68,8 +70,7 @@ def q2(q1_tokens, sample, text):
     with a yellow background. Highlight all tokens identified in step 1 with a light 
     red background. Write the result to a static HTML file."""
 
-    tokens, _ = q1()
-    tokens_to_highlight = tokens.loc[tokens.in_sample==True].copy()
+    tokens_to_highlight = q1_tokens.loc[q1_tokens.in_sample==True].copy()
     tokens_to_highlight['length'] = [len(token) for token in tokens_to_highlight.tokens]
     tokens_to_highlight = tokens_to_highlight.sort_values(by='length', ascending=False)
 
