@@ -80,12 +80,12 @@ def q2(q1_tokens, sample, text):
     red_tags = ['<span style="background-color: #FFCCCB">', '</span>']
 
     for token in tokens_to_highlight.tokens:
-        padded_token = token.join([' ', ' '])
+        padded_token = token#.join([' ', ' '])
         highlight = token.join(red_tags).join([' ', ' '])
         text = text.replace(padded_token, highlight)
         
     for token in sample.tokens:
-        padded_token = token.join([' ', ' '])
+        padded_token = token#.join([' ', ' '])
         highlight = token.join(yellow_tags).join([' ', ' '])
         text = text.replace(padded_token, highlight)
     
